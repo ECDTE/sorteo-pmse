@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteo Virtual DTE – PMSE</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      color: #2a4365;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #2b6cb0;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Bienvenido al Sorteo Virtual DTE – PMSE</h1>
+
+  <p><strong>Nombre de campaña:</strong> Sorteo julio 2025</p>
+  <p><strong>Inicio:</strong> 2025-07-31 10:00</p>
+  <p><strong>Fin:</strong> 2025-07-31 17:00</p>
+
+  <button onclick="sortearGanador()">🟢 Empezar Sorteo</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    const participantes = [
+      { numero: 1, nombre: "Ana" },
+      { numero: 2, nombre: "Mauricio" },
+      { numero: 3, nombre: "Ángel" },
+      { numero: 4, nombre: "John" },
+      { numero: 5, nombre: "Patricia" },
+      { numero: 6, nombre: "Kennia" },
+      { numero: 7, nombre: "Magaly" },
+      { numero: 8, nombre: "Guiselle" }
+    ];
+
+    function sortearGanador() {
+      const indexGanador = Math.floor(Math.random() * participantes.length);
+      const ganador = participantes[indexGanador];
+      const mensaje = `
+        🎁 El ganador del comodín es: ${ganador.numero} = ${ganador.nombre}<br><br>
+        ¡Felicitaciones ${ganador.nombre}! 🎉 Espero que estés avanzando con las tareas del PMSE, 
+        ya que hasta la fecha no has publicado nada en el chat de Connecteam.<br>
+        ¡Vamos ${ganador.nombre}, tú puedes! ¡No pierdas el comodín!<br><br>
+        📘 ¿Revisaste el blog de Uruguay? Revisa datos de #comex entre ambos países 👉 
+        <a href="https://bit.ly/blog-uruguay" target="_blank">bit.ly/blog-uruguay</a>
+      `;
+      document.getElementById("resultado").innerHTML = mensaje;
+    }
+  </script>
+
+</body>
+</html>
